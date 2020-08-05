@@ -3,12 +3,24 @@ var app = express()
 // port
 var port = 4080
 
+// set view engine using pug, 
+
+app.set('view engine', 'pug')
+app.set('views', './views')
+
 app.get('/', function(req, res){
-  res.send('Hello world, I am Tri<a href = "/users">Click to go to Todo list users</a>')
+  res.render('index.pug', {
+    name: 'DHMTri'
+  })
 })
 
 app.get('/users', function(req, res){
-  res.send('Todo list users')
+  res.render('users/index.pug',{
+    listUsers: [
+      {id: 1, name: 'Tri'},
+      {id: 2, name: 'Truck'}
+    ]
+  })
 })
 
 app.listen(port, ()=> {
