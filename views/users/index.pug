@@ -1,0 +1,12 @@
+h1 Todo list users
+
+//- a(href="/users/create")Insert users
+a(href="/users/create") Insert user
+form(action="/users/search", method="GET")
+    input(type="text")
+    button Search
+ul
+    each val in listUsers
+        li
+            span=val.name
+            a(href="/users/" + val.id ) View
