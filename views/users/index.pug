@@ -1,12 +1,16 @@
-h1 Todo list users
+html
+    head
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" ,crossorigin="anonymous")
+    body
 
-//- a(href="/users/create")Insert users
-a(href="/users/create") Insert user
-form(action="/users/search", method="GET")
-    input(type="text", name='inputState')
-    button Search
-ul
-    each val in listUsers
-        li
-            span=val.name
-            a(href="/users/" + val.id ) View
+        h1 Todo list users
+        a(href="/users/create") Insert user
+        form(action="/users/search", method="GET")
+            input(type="text", name='inputState')
+            button Search
+        ul
+            each val in listUsers
+                li
+                    span=val.name
+                    span &nbsp
+                    a(href="/users/" + val.id ) View

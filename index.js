@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var db = require('./db');
 var userRoute = require('./routes/user.route');
 
- 
+
 // port
 
 var port = 4000;
